@@ -1,9 +1,14 @@
 <div class="navbar">
 
+    <%= link_to "All cocktails", cocktails_path %>
+
+
     <form class="form-inline" action="/cocktails" method="get">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <input type="search" class="form-control" name="search" value=<%= @query %>>
     <button type="submit" class="btn btn-primary">Search</button>
     </form>
+
+    <%= link_to "All ingredients", ingredients_path %>
 
 </div>
