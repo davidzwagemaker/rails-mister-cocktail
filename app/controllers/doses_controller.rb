@@ -1,5 +1,5 @@
 class DosesController < ApplicationController
-  before_action :set_cocktail, only: [:new, :create, :show]
+  before_action :set_cocktail, only: [:new, :create]
   before_action :set_dose, only: [:destroy]
 
   def new
@@ -18,8 +18,8 @@ class DosesController < ApplicationController
     end
   end
 
-  def show
-  end
+  # def show
+  # end
 
   def destroy
     @dose.destroy
@@ -38,5 +38,4 @@ class DosesController < ApplicationController
   def dose_params
     params.require(:dose).permit(:description, :cocktail_id, :ingredient_id)
   end
-
 end
