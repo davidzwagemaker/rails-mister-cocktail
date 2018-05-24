@@ -5,21 +5,17 @@ class DosesController < ApplicationController
   def new
     @dose = Dose.new
     @dose.cocktail = @cocktail
-    # byebug
   end
 
   def create
     @dose = Dose.new(dose_params)
-    # byebug
+    @dose.cocktail = @cocktail
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
       render :new
     end
   end
-
-  # def show
-  # end
 
   def destroy
     @dose.destroy
