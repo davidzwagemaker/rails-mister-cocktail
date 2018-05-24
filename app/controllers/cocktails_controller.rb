@@ -1,7 +1,15 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show]
+  before_action :set_cocktail, only: [:show, :destroy]
+
   def index
-    @cocktails = Cocktail.all
+    filter= "'%#{params[:search]}%'"
+    @query = params[:search]
+
+    if @query.nil?
+      @cocktails = Cocktail.all
+    else
+      @cocktails = Cocktail.search(@query)
+    end
   end
 
   def show
@@ -18,6 +26,11 @@ class CocktailsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @cocktail.destroy
+    redirect_to cocktails_path
   end
 
   private

@@ -19,6 +19,7 @@ class DosesController < ApplicationController
 
   def destroy
     @dose.destroy
+    redirect_to request.referrer
   end
 
   private
