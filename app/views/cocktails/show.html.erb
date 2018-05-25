@@ -14,6 +14,7 @@
 <% end %>
 </ul>
 
+<%= link_to "Edit cocktail", edit_cocktail_path(@cocktail) %> |
 <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %> |
 <%= link_to "Delete cocktail", cocktail_path(@cocktail), :method => :delete %> |
 <%= link_to "Other cocktails", cocktails_path %>

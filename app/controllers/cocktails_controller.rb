@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show, :destroy]
+  before_action :set_cocktail, only: [:show, :destroy, :edit, :update]
 
   def index
     filter= "'%#{params[:search]}%'"
@@ -13,6 +13,15 @@ class CocktailsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    @cocktail.update(cocktail_params)
+    redirect_to cocktails_path(@cocktail)
+    # raise
   end
 
   def new

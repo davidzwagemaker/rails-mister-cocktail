@@ -1,10 +1,8 @@
-<h1>Add a new cocktail</h1>
+<h1>Editing <%= @cocktail.name %></h1>
 
 <%= simple_form_for(@cocktail) do |f| %>
   <%= f.input :name %>
   <%= f.input :photo %>
-  <!-- <%= f.file_field :photo %> -->
-
   <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "Add cocktail" %>
+  <%= f.submit "Edit cocktail" %>
 <% end %>
