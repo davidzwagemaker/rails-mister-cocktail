@@ -8,6 +8,7 @@ gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'figaro'
+gem 'cloudinary'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
